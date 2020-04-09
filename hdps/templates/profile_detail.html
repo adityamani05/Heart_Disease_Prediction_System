@@ -1,0 +1,94 @@
+{% extends 'home.html' %}
+{% load static %}
+<link rel='stylesheet' href=" {% static 'css/profile_detail.css' %}" />
+{% block body_block %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  {% if object is not None%}
+  <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{%static 'images/profile1.jpg'%}" height="200" width="200" alt="Image Not Available"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="" role="tab" aria-controls="home" aria-selected="true">About</a>
+                              <h5>
+                                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>      {{object}}
+                                    </h5>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                      <a href="update">  <button type="button" class="btn btn-primary">Update Profile</button></a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <!-- <div class="tab-content profile-tab id="myTabContent">
+                            <div> -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>First Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.user.first_name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Last Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.user.last_name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Birth Date</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.birth_date}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.user.email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.phone_no}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.address}}</p>
+                                            </div>
+                                        </div>
+                            </div>
+
+
+            </form>
+        </div>
+
+        {%else%}
+        <a href="profile/">  <button type="button" class="btn btn-primary">Create Profile</button></a>
+        {%endif%}
+    </div>
+{% endblock %}

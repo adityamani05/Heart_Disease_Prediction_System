@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% load bootstrap4 %}
+{% block body_block %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  {% if messages %}
+
+    {% for message in messages %}
+    <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+    {% endfor %}
+    {%else %}
+    {% for report in all_reports %}
+    <h3>{{ report.date_time }}</h3>
+    {% endfor %}
+
+{% endif %}
+
+    <h1> </h1>
+
+    </div>
+    {% endblock %}
