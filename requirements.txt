@@ -10,7 +10,7 @@ contextlib2==0.6.0
 cycler==0.10.0
 distlib==0.3.0
 distro==1.4.0
-Django==3.1
+Django==3.1.8
 django-bootstrap4==2.2.0
 djangorestframework==3.11.1
 et-xmlfile==1.0.1
